@@ -1,0 +1,33 @@
+<h1>Messages</h1>
+<ul class="message-list">
+    {{#messages}}
+    <li class="message-list-item">
+        <div class="message-list-item__author">
+            {{author}}
+        </div>
+        <div class="message-list-item__date">
+            {{date}}
+        </div>
+        <div class="message-list-item__text">
+            {{text}}
+        </div>
+    </li>
+    {{/messages}}
+</ul>
+<form action="/new" method="post" id="messageForm">
+    <input type="hidden">
+    <div class="form-row">
+        <label for="a">Author</label>
+        <div id="error" style="display: none; color: red">In diesem Textfeld muss was stehen.</div>
+        <input type="text" name="author" id="a">
+    </div>
+    <div class="form-row">
+        <label for="b">Text</label>
+        <div id="error" style="display: none; color: red">In diesem Textfeld muss was stehen.</div>
+        <textarea name="text" id="b" rows="4" placeholder="Hier bitte eine Nachricht eingeben"></textarea>
+    </div>
+    <div class="form-controls">
+        <button type="submit">Senden</button>
+    </div>
+</form>
+<script type="application/ecmascript" src="cl.js"></script>
